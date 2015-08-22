@@ -11,8 +11,7 @@ Main.Boot.prototype = {
 		this.load.image('background', 'assets/environment.png');
 		this.load.image('Character', 'assets/plane.png');
 		*/
-		this.load.image('player', 'assets/plane.png');
-		this.load.image('player', 'assets/plane.png');
+		//this.load.image('player', 'assets/plane.png');
 	},
 	create: function () {
 		// this.game.stage.enableOrientationCheck(true, false, 'orientation');
