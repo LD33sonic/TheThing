@@ -33,9 +33,9 @@ var menu = {
 			+  "</div>";
 		+  "</div>";
 
-		$('.form-container').html(template);
+	/*	$('.form-container').html(template);
 
-		/* Form Inputs */
+	Form Inputs
 		$(document).ready(function(){
 			$(document).on('click','.btn-play',function(){
 				//game.state.states['game'].player.IGN = $('.ign-input').val();;
@@ -51,6 +51,6 @@ var menu = {
 		});
 	},
 	nameGenerator : function(){
-		/* Default name gen for the lulz */
+		 Default name gen for the lulz */
 	}
 };
