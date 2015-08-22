@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Santa's Letter</title>
+        <script type="text/javascript" src="../../Plugins/Phaser/phaser.min.js"></script>
+        <script type="text/javascript" src="../../Plugins/Jquery/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="../../Plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="States/Boot.js"></script>
+        <script type="text/javascript" src="States/Preloader.js"></script>
+        <script type="text/javascript" src="States/StartMenu.js"></script>
+        <script type="text/javascript" src="States/Game.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../Plugins/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </head>
+    <body>
+      <div class='landing-container text-center' id="game-container">
+        <span class='form-container'></span>
+        <span class='chat-container'></span>
+        <script>
+            (function() {
+                var Oh = window.innerHeight,
+                    Ow = window.innerWidth;
+                var game = new Phaser.Game(Ow, Oh, Phaser.AUTO, 'game-container');
+                game.state.add('boot', Main.Boot,true);
+                game.state.add('preloader', Main.Preloader);
+                game.state.add('startMenu', Main.StartMenu);
+                game.state.add('game', Main.Game);
+                game.state.start('boot');
+                //Resizer
+                $(window).resize(function() {
+                  var Sh = $(window).innerHeight(),
+                      Sw = $(window).innerWidth();
+                  try{
+                      game.width = Number(Sw);
+                      game.height = Number(Sh);
+                      game.stage.bounds.width = Number(Sw);
+                      game.stage.bounds.height = Number(Sh);
+                      game.renderer.resize(Number(Sw), Number(Sh));
+                      Phaser.Canvas.setSmoothingEnabled(game.context, false);
+                  } catch(e){
+                      console.log('Error:' + e.message + '.');
+                  }
+                });
+            })();
+        </script>
+    </body>
+</html>
