@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>The Thing</title>
+        <script type="text/javascript" src="plugins/Phaser/phaser.min.js"></script>
+        <script type="text/javascript" src="States/Boot.js"></script>
+        <script type="text/javascript" src="States/Preloader.js"></script>
+        <script type="text/javascript" src="States/StartMenu.js"></script>
+        <script type="text/javascript" src="States/Game.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </head>
+    <body>
+      <div class='landing-container text-center' id="game-container">
+        <span class='form-container'></span>
+        <span class='chat-container'></span>
+        <script>
+            (function() {
+                var game = new Phaser.Game(720,500, Phaser.AUTO, 'game-container');
+                game.state.add('boot', Main.Boot,true);
+                game.state.add('preloader', Main.Preloader);
+                game.state.add('startMenu', Main.StartMenu);
+                game.state.add('game', Main.Game);
+                game.state.start('boot');
+                //Phaser.Canvas.setSmoothingEnabled(game.context, false);
+            })();
+        </script>
+    </body>
+</html>

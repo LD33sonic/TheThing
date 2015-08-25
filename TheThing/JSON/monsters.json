@@ -1,0 +1,16 @@
+[
+  {
+    "monsters" : [
+      {
+        "pickachu" : {
+          "sprite" : "assets/monster/pickachu.jpg",
+          "name" : "pickachu",
+        },
+        "agumon" : {
+          "sprite" : "assets/monster/agumon.jpg",
+          "name" : "agumon",
+        }
+      }
+    ]
+  }
+]
