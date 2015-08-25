@@ -7,6 +7,7 @@ Main.Game.prototype = {
 
 	},
 	create: function() {
+<<<<<<< HEAD
 		this.cursors = this.input.keyboard.createCursorKeys();
 
 		this.player = this.add.sprite(model.player.startPos.x,model.player.startPos.y(this.world.height),'player');
@@ -30,6 +31,12 @@ Main.Game.prototype = {
 	update: function() {
 		controller.player.collisions(this);
 		controller.player.movement(this);
+=======
+		var player = this.add.sprite(200,200,'player')
+	},
+	update: function() {
+
+>>>>>>> fa3d6a229017cbc2969abffd334e873152371993
 	},
 	render: function(){
 
@@ -46,6 +53,7 @@ var view = {
 var model = {
 	ui : {},
 	creatures : {},
+<<<<<<< HEAD
 	player : {
 		height : 20,
 		width : 20,
@@ -129,5 +137,15 @@ var controller = {
 			/*NORMALIZE BOUNCING WITH BOOL*/
 		})
 	},
+=======
+	player : {},
+	world : {}
+}
+
+var controller = {
+	ui : {},
+	creatures : {},
+	player : {},
+>>>>>>> fa3d6a229017cbc2969abffd334e873152371993
 	world : {}
 }
